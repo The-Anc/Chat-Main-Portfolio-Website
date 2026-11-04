@@ -13,16 +13,16 @@ window.PORTFOLIO = {
   reels: [],
 designs: [
   {
-    title: "Creative Design Project",
-    description: "Graphic design and visual communication",
+    title: "Hero Shot Design",
+    description: "Social Media Design For An International Brand",
     type: "image",
     url: "assets/graphic-designs/4.png",
     thumbnail: "assets/graphic-designs/4.png",
     label: "GRAPHIC DESIGN"
   },
   {
-    title: "ANC Laptop Luxury",
-    description: "Creative product advertising design",
+    title: "Social Media Design",
+    description: "Laptop advertising design",
     type: "image",
     url: "assets/graphic-designs/Ancs%20Laptops%20Luxury.png",
     thumbnail: "assets/graphic-designs/Ancs%20Laptops%20Luxury.png",
