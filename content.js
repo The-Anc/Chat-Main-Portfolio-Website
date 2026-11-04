@@ -18,7 +18,7 @@ designs: [
     type: "image",
     url: "assets/graphic-designs/4.png",
     thumbnail: "assets/graphic-designs/4.png",
-    label: "GRAPHIC DESIGN"
+    label: "LUXURY POSITIONING"
   },
   {
     title: "Social Media Design",
@@ -26,7 +26,7 @@ designs: [
     type: "image",
     url: "assets/graphic-designs/Ancs%20Laptops%20Luxury.png",
     thumbnail: "assets/graphic-designs/Ancs%20Laptops%20Luxury.png",
-    label: "ADVERTISING DESIGN"
+    label: "CAPTIVATING DESIGN"
   }
 ],
 };
