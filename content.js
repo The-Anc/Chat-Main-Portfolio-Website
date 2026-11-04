@@ -67,7 +67,7 @@ window.PORTFOLIO = {
     url: "assets/short-form-reels/Zentera.mp4",
     label: "REAL ESTATE"
   }
-],,
+],
 designs: [
   {
     title: "Hero Shot Design",
