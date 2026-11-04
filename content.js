@@ -11,5 +11,14 @@ window.PORTFOLIO = {
   instagram: "",
   longForm: [],
   reels: [],
-  designs: []
+  designs: [
+  {
+    title: "Brand Identity Design",
+    description: "Visual identity and creative direction",
+    type: "image",
+    url: "assets/graphic-designs/brand-identity.jpg",
+    thumbnail: "assets/graphic-designs/brand-identity.jpg",
+    label: "BRAND DESIGN"
+  }
+],
 };
