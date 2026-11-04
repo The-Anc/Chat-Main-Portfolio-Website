@@ -31,16 +31,85 @@
     }
     lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
   }
-  function makeCard(item, index) {
-    const card = document.createElement('article'); card.className = 'work-card';
-    const thumb = document.createElement('div'); thumb.className = 'work-thumb'; thumb.style.setProperty('--thumb', palettes[index % palettes.length]);
-    if (item.thumbnail || item.url && item.type === 'image') { thumb.style.backgroundImage = `linear-gradient(0deg,rgba(12,10,28,.42),rgba(12,10,28,.02)),url("${item.thumbnail || item.url}")`; thumb.style.backgroundSize = 'cover'; thumb.style.backgroundPosition = 'center'; }
-    const symbol = document.createElement('span'); symbol.className = 'thumb-symbol'; symbol.textContent = symbols[item.type] || '✦';
-    const label = document.createElement('span'); label.className = 'thumb-label'; label.textContent = item.label || 'FEATURED WORK'; thumb.append(symbol, label);
-    const meta = document.createElement('div'); meta.className = 'work-meta';
-    const copy = document.createElement('div'); const title = document.createElement('h3'); title.textContent = item.title || 'Untitled project'; const desc = document.createElement('p'); desc.textContent = item.description || 'Creative work'; copy.append(title, desc);
-    const open = document.createElement('span'); open.className = 'open-icon'; open.textContent = '↗'; meta.append(copy, open); card.append(thumb, meta);
-    if (item.url) card.addEventListener('click', () => showItem(item)); else card.style.cursor = 'default';
+ 
+function makeCard(item, index) {
+    const card = document.createElement('article');
+    card.className = 'work-card';
+
+    const thumb = document.createElement('div');
+    thumb.className = 'work-thumb';
+    thumb.style.setProperty('--thumb', palettes[index % palettes.length]);
+
+    const isVideo = item.type === 'video' ||
+        /\.(mp4|webm|ogg)(\?.*)?$/i.test(item.url || '');
+
+    if (isVideo) {
+        const video = document.createElement('video');
+        video.className = 'card-video';
+        video.src = item.url;
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        video.autoplay = false;
+        video.muted = false;
+
+        video.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        thumb.appendChild(video);
+
+    } else {
+        if (item.thumbnail || (item.url && item.type === 'image')) {
+            thumb.style.backgroundImage =
+                `linear-gradient(0deg,rgba(12,10,28,.42),rgba(12,10,28,.02)),url("${item.thumbnail || item.url}")`;
+
+            thumb.style.backgroundSize = 'cover';
+            thumb.style.backgroundPosition = 'center';
+        }
+
+        const symbol = document.createElement('span');
+        symbol.className = 'thumb-symbol';
+        symbol.textContent = symbols[item.type] || '✦';
+        thumb.appendChild(symbol);
+    }
+
+    const label = document.createElement('span');
+    label.className = 'thumb-label';
+    label.textContent = item.label || 'FEATURED WORK';
+
+    thumb.appendChild(label);
+
+    const meta = document.createElement('div');
+    meta.className = 'work-meta';
+
+    const copy = document.createElement('div');
+
+    const title = document.createElement('h3');
+    title.textContent = item.title || 'Untitled project';
+
+    const desc = document.createElement('p');
+    desc.textContent = item.description || 'Creative work';
+
+    copy.append(title, desc);
+
+    const open = document.createElement('span');
+    open.className = 'open-icon';
+    open.textContent = isVideo ? '▶' : '↗';
+
+    meta.append(copy, open);
+    card.append(thumb, meta);
+
+    if (item.url && !isVideo) {
+        card.addEventListener('click', () => showItem(item));
+    }
+
+    if (isVideo) {
+        card.style.cursor = 'default';
+    } else if (!item.url) {
+        card.style.cursor = 'default';
+    }
+
     return card;
   }
   function render(items, targetId, count) {
