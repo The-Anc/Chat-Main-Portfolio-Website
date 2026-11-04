@@ -27,6 +27,30 @@ designs: [
     url: "assets/graphic-designs/Ancs%20Laptops%20Luxury.png",
     thumbnail: "assets/graphic-designs/Ancs%20Laptops%20Luxury.png",
     label: "CAPTIVATING DESIGN"
+  },
+  {
+    title: "Creative Perspectives",
+    description: "A thoughtful exploration of visual composition and creative expression.",
+    type: "image",
+    url: "assets/graphic-designs/7.png",
+    thumbnail: "assets/graphic-designs/7.png",
+    label: "VISUAL STORYTELLING"
+  },
+  {
+    title: "The Art of Visual Impact",
+    description: "Bold creative execution designed to capture attention and communicate ideas.",
+    type: "image",
+    url: "assets/graphic-designs/10.png",
+    thumbnail: "assets/graphic-designs/10.png",
+    label: "CREATIVE DIRECTION"
+  },
+  {
+    title: "Designed to Communicate",
+    description: "Strategic visual communication through thoughtful graphic design.",
+    type: "image",
+    url: "assets/graphic-designs/12.png",
+    thumbnail: "assets/graphic-designs/12.png",
+    label: "GRAPHIC DESIGN"
   }
 ],
 };
