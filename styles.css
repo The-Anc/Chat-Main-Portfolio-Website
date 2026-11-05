@@ -59,3 +59,10 @@
     height: 40px;
   }
 }
+/* FOOTER LOGO */
+.site-footer .brand-logo {
+  width: 42px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
