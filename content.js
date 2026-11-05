@@ -54,14 +54,14 @@ window.PORTFOLIO = {
     label: "AUTOMOTIVE"
   },
   {
-    title: "Luxury Real Estate Showcase",
+    title: "Beauty Shop Opening",
     description: "Creative short-form video project.",
     type: "video",
     url: "assets/short-form-reels/Tatjana.mp4",
     label: "REAL ESTATE"
   },
   {
-    title: "Luxury Real Estate Showcase 02",
+    title: "Luxury Real Estate Showcase",
     description: "Creative short-form video production and editing.",
     type: "video",
     url: "assets/short-form-reels/Zentera.mp4",
