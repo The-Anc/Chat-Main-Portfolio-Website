@@ -67,25 +67,6 @@
   display: block;
 }
 
-
-
-/* ANC ELIEZER — FINAL HERO PORTRAIT */
-
-.hero-art.hero-photo {
-    height: 680px !important;
-    min-height: 680px;
-    position: relative;
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center !important;
-    overflow: visible !important;
-    background: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    isolation: auto !important;
-}
-
 .hero-art.hero-photo::before,
 .hero-art.hero-photo::after {
     display: none !important;
@@ -135,13 +116,6 @@
     }
 }
 
-}
-
-/* Remove the old decorative artwork and square overlay */
-.hero-photo::before,
-.hero-photo::after {
-    content: none !important;
-    display: none !important;
 }
 
 .hero-portrait {
@@ -211,42 +185,90 @@
     pointer-events: none;
 }
 
-/* FINAL HERO PORTRAIT OVERRIDE */
+/* ANC ELIEZER — CLEAN HERO PORTRAIT */
 
 .hero-art.hero-photo {
-    background: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 !important;
+    height: 620px !important;
+    min-height: 0 !important;
+    width: 100%;
+    position: relative;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
     overflow: visible !important;
     isolation: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
 }
 
 .hero-art.hero-photo::before,
 .hero-art.hero-photo::after {
     content: none !important;
     display: none !important;
-    background: none !important;
-    box-shadow: none !important;
 }
 
 .hero-art.hero-photo .hero-portrait {
+    display: block !important;
+    width: auto !important;
+    height: 100% !important;
+    max-height: 620px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+    position: relative !important;
     background: transparent !important;
-    border: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
-    object-fit: contain;
-    object-position: center bottom;
 
-    -webkit-mask-image: radial-gradient(
-        ellipse 90% 100% at 50% 35%,
-        #000 68%,
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 78%,
+        rgba(0,0,0,.8) 88%,
+        rgba(0,0,0,.3) 96%,
         transparent 100%
     );
 
-    mask-image: radial-gradient(
-        ellipse 90% 100% at 50% 35%,
-        #000 68%,
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 78%,
+        rgba(0,0,0,.8) 88%,
+        rgba(0,0,0,.3) 96%,
         transparent 100%
     );
+}
+
+/* TABLET */
+@media (max-width: 850px) {
+    .hero-art.hero-photo {
+        height: 540px !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    .hero-art.hero-photo .hero-portrait {
+        max-height: 540px !important;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+    .hero-art.hero-photo {
+        height: 440px !important;
+        min-height: 440px !important;
+        width: 100%;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    .hero-art.hero-photo .hero-portrait {
+        max-height: 440px !important;
+        max-width: 100% !important;
+    }
 }
