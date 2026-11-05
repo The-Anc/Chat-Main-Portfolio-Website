@@ -112,3 +112,32 @@
         max-height: 480px;
     }
 }
+
+/* FIX LONG-FORM VIDEO DISPLAY */
+
+#long-form-grid .work-thumb {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #080711;
+}
+
+#long-form-grid .work-thumb video.card-video {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #080711;
+    z-index: 2;
+}
+
+#long-form-grid .work-thumb .thumb-label {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+}
