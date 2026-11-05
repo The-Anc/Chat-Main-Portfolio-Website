@@ -68,17 +68,73 @@
 }
 
 
-/* ANC ELIEZER HERO PORTRAIT — SEAMLESS DISPLAY */
 
-.hero-photo {
+/* ANC ELIEZER — FINAL HERO PORTRAIT */
+
+.hero-art.hero-photo {
+    height: 680px !important;
+    min-height: 680px;
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: visible;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    overflow: visible !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    isolation: auto !important;
+}
+
+.hero-art.hero-photo::before,
+.hero-art.hero-photo::after {
+    display: none !important;
+    content: none !important;
+}
+
+.hero-art.hero-photo .hero-portrait {
+    display: block !important;
+    width: auto !important;
+    height: 100% !important;
+    max-height: 680px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+
+    /* Feather the lower edge */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 76%,
+        rgba(0,0,0,0.8) 84%,
+        rgba(0,0,0,0.35) 93%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 76%,
+        rgba(0,0,0,0.8) 84%,
+        rgba(0,0,0,0.35) 93%,
+        transparent 100%
+    );
+}
+
+@media (max-width: 768px) {
+    .hero-art.hero-photo {
+        height: 500px !important;
+        min-height: 500px;
+    }
+
+    .hero-art.hero-photo .hero-portrait {
+        max-height: 500px !important;
+    }
+}
+
 }
 
 /* Remove the old decorative artwork and square overlay */
