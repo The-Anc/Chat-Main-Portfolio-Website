@@ -81,8 +81,8 @@ thumb.addEventListener('click', () => {
 
     const iframe = document.createElement('iframe');
 
-    iframe.src =
-        `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1${timestamp}&playsinline=1&cc_load_policy=0&rel=0`;
+iframe.src =
+    `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1${timestamp}&playsinline=1&cc_load_policy=0&rel=0&iv_load_policy=3&disablekb=1`;
 
     iframe.title = item.title || 'YouTube video';
 
