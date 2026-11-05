@@ -74,23 +74,44 @@ function makeCard(item, index) {
         playButton.textContent = '▶';
         thumb.appendChild(playButton);
 
-        thumb.addEventListener('click', () => {
-            const start = item.url.match(/[?&]t=(\d+)/);
-            const timestamp = start ? `&start=${start[1]}` : '';
+      
+thumb.addEventListener('click', () => {
+    const start = item.url.match(/[?&]t=(\d+)/);
+    const timestamp = start ? `&start=${start[1]}` : '';
 
-            const iframe = document.createElement('iframe');
-            iframe.src =
-                `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1${timestamp}&playsinline=1&cc_load_policy=0&rel=0`;
+    const iframe = document.createElement('iframe');
 
-            iframe.allow =
-                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.src =
+        `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1${timestamp}&playsinline=1&cc_load_policy=0&rel=0`;
 
-            iframe.allowFullscreen = true;
-            iframe.title = item.title || 'YouTube video';
+    iframe.title = item.title || 'YouTube video';
 
-            thumb.innerHTML = '';
-            thumb.appendChild(iframe);
-        }, { once: true });
+    iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+
+    iframe.allowFullscreen = true;
+
+    iframe.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        display: block;
+        border: 0;
+        z-index: 5;
+    `;
+
+    thumb.style.position = 'relative';
+    thumb.style.overflow = 'hidden';
+    thumb.style.backgroundImage = 'none';
+    thumb.classList.add('youtube-playing');
+
+    thumb.innerHTML = '';
+    thumb.appendChild(iframe);
+
+}, { once: true });
 
     } else {
         if (item.thumbnail || (item.url && item.type === 'image')) {
