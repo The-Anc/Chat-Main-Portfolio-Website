@@ -9,7 +9,17 @@ window.PORTFOLIO = {
   email: "chianaeli@gmail.com",
   whatsapp: "2347039118044",
   instagram: "",
-  longForm: [],
+
+longForm: [
+  {
+    title: "Meet Eliezer Chianakwalam (The AncMan)",
+    description: "An introduction to Eliezer Chianakwalam, his creative approach, expertise and passion for visual storytelling.",
+    type: "video",
+    url: "assets/long-form-videos/Eliezer%20Chianakwalam%20Intro.mp4",
+    label: "INTRODUCTION"
+  }
+],
+
 
 
 reels: [
