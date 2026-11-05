@@ -11,56 +11,8 @@ window.PORTFOLIO = {
   instagram: "",
   longForm: [],
 
+
 reels: [
-  {
-    title: "South Adelaide Real Estate",
-    description: "Short-form video content covering property market trends and insights.",
-    type: "video",
-    url: "assets/short-form-reels/1.%20South%20Adelaide%20Property%20Prices%20Could%20Spike.mp4",
-    label: "PROPERTY CONTENT"
-  },
-  {
-    title: "Applewood BMW",
-    description: "Creative automotive video content.",
-    type: "video",
-    url: "assets/short-form-reels/Applewood%20Bmw.mp4",
-    label: "AUTOMOTIVE"
-  },
-  {
-    title: "Laptop Processors",
-    description: "Technology-focused video content explaining product differences.",
-    type: "video",
-    url: "assets/short-form-reels/Core%20I5%20Vs%20Core%20I7.mp4",
-    label: "TECH CONTENT"
-  },
-  {
-    title: "IT Service Ad",
-    description: "Creative greenscreen video production and editing.",
-    type: "video",
-    url: "assets/short-form-reels/Eliezer%20Greenscreen.mp4",
-    label: "APP SHOWCASE"
-  },
-  {
-    title: "AI Automation Talking Head",
-    description: "Professional talking-head video production and editing.",
-    type: "video",
-    url: "assets/short-form-reels/Eliezer%20Talkinghead.mp4",
-    label: "AI AGENTS AD"
-  },
-  {
-    title: "McLaren",
-    description: "Automotive-themed short-form video production.",
-    type: "video",
-    url: "assets/short-form-reels/Mclaren.mp4",
-    label: "AUTOMOTIVE"
-  },
-  {
-    title: "Beauty Shop Opening",
-    description: "Creative short-form video project.",
-    type: "video",
-    url: "assets/short-form-reels/Tatjana.mp4",
-    label: "REAL ESTATE"
-  },
   {
     title: "Luxury Real Estate Showcase",
     description: "Creative short-form video production and editing.",
@@ -81,6 +33,55 @@ reels: [
     type: "video",
     url: "assets/short-form-reels/Gury%20Open%20House%20No%20Text%20Clr.mp4",
     label: "REAL ESTATE"
+  },
+  {
+    title: "South Adelaide Real Estate",
+    description: "Short-form video content covering property market trends and insights.",
+    type: "video",
+    url: "assets/short-form-reels/1.%20South%20Adelaide%20Property%20Prices%20Could%20Spike.mp4",
+    label: "PROPERTY CONTENT"
+  },
+  {
+    title: "AI Automation Talking Head",
+    description: "Professional talking-head video production and editing.",
+    type: "video",
+    url: "assets/short-form-reels/Eliezer%20Talkinghead.mp4",
+    label: "AI AGENTS AD"
+  },
+  {
+    title: "IT Service Ad",
+    description: "Creative greenscreen video production and editing.",
+    type: "video",
+    url: "assets/short-form-reels/Eliezer%20Greenscreen.mp4",
+    label: "APP SHOWCASE"
+  },
+  {
+    title: "Applewood BMW",
+    description: "Creative automotive video content.",
+    type: "video",
+    url: "assets/short-form-reels/Applewood%20Bmw.mp4",
+    label: "AUTOMOTIVE"
+  },
+  {
+    title: "McLaren",
+    description: "Automotive-themed short-form video production.",
+    type: "video",
+    url: "assets/short-form-reels/Mclaren.mp4",
+    label: "AUTOMOTIVE"
+  },
+  {
+    title: "Beauty Shop Opening",
+    description: "Creative short-form video project.",
+    type: "video",
+    url: "assets/short-form-reels/Tatjana.mp4",
+    label: "REAL ESTATE"
+  },
+  {
+    title: "Laptop Processors",
+    description: "Technology-focused video content explaining product differences.",
+    type: "video",
+    url: "assets/short-form-reels/Core%20I5%20Vs%20Core%20I7.mp4",
+    label: "TECH CONTENT"
   }
 ],
   
