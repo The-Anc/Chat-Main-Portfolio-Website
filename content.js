@@ -10,7 +10,8 @@ window.PORTFOLIO = {
   whatsapp: "2347039118044",
   instagram: "",
   longForm: [],
- reels: [
+
+reels: [
   {
     title: "South Adelaide Real Estate",
     description: "Short-form video content covering property market trends and insights.",
@@ -33,18 +34,18 @@ window.PORTFOLIO = {
     label: "TECH CONTENT"
   },
   {
-    title: "IT service ad",
+    title: "IT Service Ad",
     description: "Creative greenscreen video production and editing.",
     type: "video",
     url: "assets/short-form-reels/Eliezer%20Greenscreen.mp4",
-    label: "APP Showcase"
+    label: "APP SHOWCASE"
   },
   {
     title: "AI Automation Talking Head",
     description: "Professional talking-head video production and editing.",
     type: "video",
     url: "assets/short-form-reels/Eliezer%20Talkinghead.mp4",
-    label: "AI Agents Ad"
+    label: "AI AGENTS AD"
   },
   {
     title: "McLaren",
@@ -66,8 +67,23 @@ window.PORTFOLIO = {
     type: "video",
     url: "assets/short-form-reels/Zentera.mp4",
     label: "REAL ESTATE"
+  },
+  {
+    title: "Luxury Real Estate Showcase 02",
+    description: "Luxury property promotional video.",
+    type: "video",
+    url: "assets/short-form-reels/Ann%20House%20Main.mp4",
+    label: "REAL ESTATE"
+  },
+  {
+    title: "Luxury Real Estate Showcase 03",
+    description: "Real estate open house promotional video.",
+    type: "video",
+    url: "assets/short-form-reels/Gury%20Open%20House%20No%20Text%20Clr.mp4",
+    label: "REAL ESTATE"
   }
 ],
+  
 designs: [
   {
     title: "Hero Shot Design",
