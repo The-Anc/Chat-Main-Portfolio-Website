@@ -37,3 +37,25 @@
     height: 320px;
   }
 }
+/* ANC MAN BRAND LOGO */
+
+.brand-logo {
+  display: block;
+  width: 58px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .brand-logo {
+    width: 46px;
+    height: 40px;
+  }
+}
