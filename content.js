@@ -17,6 +17,20 @@ longForm: [
     type: "video",
     url: "assets/long-form-videos/Eliezer%20Chianakwalam%20Intro.mp4",
     label: "INTRODUCTION"
+  },
+  {
+    title: "Long-form Video Influencer LifeStyle",
+    description: "Long-form video production and storytelling.",
+    type: "youtube",
+    url: "https://www.youtube.com/watch?v=N3MbPnwWoXE&t=204s",
+    label: "VIDEO PRODUCTION"
+  },
+  {
+    title: "Corporate Edit",
+    description: "Creative long-form video production and editing.",
+    type: "youtube",
+    url: "https://www.youtube.com/watch?v=-t46Oetg19o&t=15s",
+    label: "VIDEO PRODUCTION"
   }
 ],
 
