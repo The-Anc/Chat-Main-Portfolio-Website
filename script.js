@@ -40,10 +40,17 @@ function makeCard(item, index) {
     thumb.className = 'work-thumb';
     thumb.style.setProperty('--thumb', palettes[index % palettes.length]);
 
-    const isVideo = item.type === 'video' ||
+    const isLocalVideo =
+        item.type === 'video' &&
         /\.(mp4|webm|ogg)(\?.*)?$/i.test(item.url || '');
 
-    if (isVideo) {
+    const isYouTube = item.type === 'youtube';
+
+    const yt = isYouTube
+        ? item.url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{6,})/)
+        : null;
+
+    if (isLocalVideo) {
         const video = document.createElement('video');
         video.className = 'card-video';
         video.src = item.url;
@@ -51,13 +58,39 @@ function makeCard(item, index) {
         video.playsInline = true;
         video.preload = 'metadata';
         video.autoplay = false;
-        video.muted = false;
-
-        video.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
 
         thumb.appendChild(video);
+
+    } else if (yt) {
+        const videoId = yt[1];
+
+        thumb.style.backgroundImage =
+            `url("https://img.youtube.com/vi/${videoId}/hqdefault.jpg")`;
+        thumb.style.backgroundSize = 'cover';
+        thumb.style.backgroundPosition = 'center';
+
+        const playButton = document.createElement('span');
+        playButton.className = 'youtube-play-button';
+        playButton.textContent = '▶';
+        thumb.appendChild(playButton);
+
+        thumb.addEventListener('click', () => {
+            const start = item.url.match(/[?&]t=(\d+)/);
+            const timestamp = start ? `&start=${start[1]}` : '';
+
+            const iframe = document.createElement('iframe');
+            iframe.src =
+                `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1${timestamp}&playsinline=1&cc_load_policy=0&rel=0`;
+
+            iframe.allow =
+                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+
+            iframe.allowFullscreen = true;
+            iframe.title = item.title || 'YouTube video';
+
+            thumb.innerHTML = '';
+            thumb.appendChild(iframe);
+        }, { once: true });
 
     } else {
         if (item.thumbnail || (item.url && item.type === 'image')) {
@@ -77,7 +110,6 @@ function makeCard(item, index) {
     const label = document.createElement('span');
     label.className = 'thumb-label';
     label.textContent = item.label || 'FEATURED WORK';
-
     thumb.appendChild(label);
 
     const meta = document.createElement('div');
@@ -95,21 +127,14 @@ function makeCard(item, index) {
 
     const open = document.createElement('span');
     open.className = 'open-icon';
-    open.textContent = isVideo ? '▶' : '↗';
+    open.textContent = isLocalVideo || isYouTube ? '▶' : '↗';
 
     meta.append(copy, open);
     card.append(thumb, meta);
 
-    if (item.url && !isVideo) {
+    if (item.url && !isLocalVideo && !isYouTube) {
         card.addEventListener('click', () => showItem(item));
     }
-
-    if (isVideo) {
-        card.style.cursor = 'default';
-    } else if (!item.url) {
-        card.style.cursor = 'default';
-    }
-
     return card;
   }
   function render(items, targetId, count) {
